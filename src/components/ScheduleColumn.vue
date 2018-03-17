@@ -1,7 +1,6 @@
 <template>
 <div>
   <td
-    v-b-modal.modal-center
     :colspan=column.colspan
     v-bind:style="{ backgroundColor: '#' + column.bgColor}"
     align="center"
