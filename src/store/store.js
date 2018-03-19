@@ -11,7 +11,8 @@ export const store = new Vuex.Store({
     userId: null,
     userName: null,
     expiration: null,
-    role: null
+    role: null,
+    showRoosterModal: false
   },
   mutations: {
     authUser (state , userData) {
@@ -20,6 +21,10 @@ export const store = new Vuex.Store({
       state.userName = userData.userName;
       state.expiration = userData.expiration;
       state.role = userData.role
+    },
+
+    showRoosterModal (state , bool) {
+      state.showRoosterModal = bool
     }
 
   },
@@ -74,6 +79,9 @@ export const store = new Vuex.Store({
     },
     notLoggedin: (state) => {
       return state.token === null
+    },
+    showRoosterModal: (state) => {
+      return state.showRoosterModal
     }
 
   }

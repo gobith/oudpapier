@@ -15,6 +15,7 @@
     columnClicked: function() {
     console.log(this.column);
     this.column.bgColor = "0707FF";
+    this.$store.commit('showRoosterModal' , true)
     }
     }
     }
