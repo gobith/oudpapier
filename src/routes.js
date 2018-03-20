@@ -1,3 +1,5 @@
+// this is a comment
+
 import Algemeen from './components/Algemeen.vue';
 import Inschrijven from './components/Inschrijven.vue';
 import Rooster from './components/Rooster.vue';
