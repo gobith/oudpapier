@@ -1,29 +1,31 @@
 <template>
   <div>
-    <b-modal ref="myModalRef" hide-footer v-model="showModal">
+    <b-modal v-model="showModal" v-on:ok="okPressed" v-on:cancel="cancelPressed">
       <div class="d-block text-center">
         <h3>Hello From My Modal!</h3>
       </div>
-      <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
     </b-modal>
   </div>
 </template>
 
 <script>
 export default {
+
   methods: {
-    hideModal () {
-
-      this.$refs.myModalRef.hide();
-      this.$store.commit('showRoosterModal', false)
-    }
-
+    okPressed: (evt) => {alert('ok pressed')},
+    cancelPressed: (evt) => {alert('cancel pressed')}
   },
+
   computed: {
-    showModal () {
-      return this.$store.getters.showRoosterModal
-    }
-  },
+            showModal: {
+                get() {
+                    return this.$store.state.showRoosterModal
+                },
+                set(val) {
+                    this.$store.commit("showRoosterModal", val)
+                }
+            }
+        },
   created () {
     console.log('created')
   }
