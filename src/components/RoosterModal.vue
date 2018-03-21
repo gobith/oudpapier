@@ -2,7 +2,8 @@
   <div>
     <b-modal v-model="showModal" v-on:ok="okPressed" v-on:cancel="cancelPressed">
       <div class="d-block text-center">
-        <h3>Hello From My Modal!</h3>
+        <h3>{{name}}</h3>
+        <p>{{date}}</p>
       </div>
     </b-modal>
   </div>
@@ -10,10 +11,13 @@
 
 <script>
 export default {
+  data () {
+    return {name: '', date: null}
+  },
 
   methods: {
-    okPressed: (evt) => {alert('ok pressed')},
-    cancelPressed: (evt) => {alert('cancel pressed')}
+    okPressed: (evt) => {},
+    cancelPressed: (evt) => {}
   },
 
   computed: {
@@ -26,8 +30,10 @@ export default {
                 }
             }
         },
-  created () {
-    console.log('created')
+  beforeUpdate () {
+    var upt = this.$store.state.userPartTime;
+    this.name = upt.userName;
+    this.date = upt.dateString
   }
 }
 </script>

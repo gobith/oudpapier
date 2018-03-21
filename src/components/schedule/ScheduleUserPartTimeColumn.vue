@@ -13,6 +13,7 @@ export default {
   props: ['column'],
   methods: {
     columnClicked: function() {
+      this.$store.commit('userPartTime' , this.column);
       this.$store.commit('showRoosterModal' , true)
       }
   }

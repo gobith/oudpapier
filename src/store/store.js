@@ -12,7 +12,8 @@ export const store = new Vuex.Store({
     userName: null,
     expiration: null,
     role: null,
-    showRoosterModal: false
+    showRoosterModal: false,
+    userPartTime: null,
   },
   mutations: {
     authUser (state , userData) {
@@ -25,6 +26,10 @@ export const store = new Vuex.Store({
 
     showRoosterModal (state , bool) {
       state.showRoosterModal = bool
+    },
+
+    userPartTime (state , userPartTime) {
+      state.userPartTime = userPartTime
     }
 
   },
@@ -50,7 +55,8 @@ export const store = new Vuex.Store({
       userId: null,
       userName: null,
       expiration: null,
-      role: null});
+      role: null,
+      userPartTime: null});
       router.push('inloggen')
   }
 
@@ -82,6 +88,9 @@ export const store = new Vuex.Store({
     },
     showRoosterModal: (state) => {
       return state.showRoosterModal
+    },
+    userPartTime: (state) => {
+      return state.userPartTime
     }
 
   }
