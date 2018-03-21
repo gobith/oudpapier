@@ -2,7 +2,7 @@
   <td
     :colspan=column.colspan
     align="center">
-    yr {{column.type}}
+    {{column.title}}
   </td>
 </template>
 

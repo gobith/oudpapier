@@ -1,6 +1,8 @@
 <template>
-  <td :colspan=column.colspan>
-    day {{column.type}}
+  <td
+    :colspan=column.colspan
+    align="center">
+    {{column.title}}
   </td>
 </template>
 

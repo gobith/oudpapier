@@ -10,7 +10,8 @@
   <scheduleusercolumn v-else-if="column.type === 'user'"   :column=column></scheduleusercolumn>
   <scheduleyearcolumn v-else-if="column.type === 'yr'"   :column=column></scheduleyearcolumn>
   <scheduleyeartitlecolumn v-else-if="column.type === 'yr-t'"   :column=column></scheduleyeartitlecolumn>
-  <scheduleuserstatuscolumn v-else-if"column.type === 'u-ss'"   :column=column></scheduleuserstatuscolumn>
+  <scheduleuserstatuscolumn v-else-if="column.type === 'u-ss'"   :column=column></scheduleuserstatuscolumn>
+
 
 </template>
 

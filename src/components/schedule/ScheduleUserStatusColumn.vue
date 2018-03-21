@@ -1,6 +1,9 @@
 <template>
-  <td :colspan=column.colspan>
-    u-ss {{column.type}}
+  <td
+    :colspan=column.colspan
+    v-bind:style="{ backgroundColor: '#' + column.bgColor}"
+    align="center">
+    {{column.title}}
   </td>
 </template>
 
@@ -9,3 +12,9 @@ export default {
   props: ['column']
 }
 </script>
+
+<style scoped>
+td {
+	width: 22px;
+}
+</style>

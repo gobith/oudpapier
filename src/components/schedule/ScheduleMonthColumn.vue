@@ -1,6 +1,8 @@
 <template>
-  <td :colspan=column.colspan>
-    mth {{column.type}}
+  <td
+    :colspan=column.colspan
+    align="center">
+    {{column.title}}
   </td>
 </template>
 

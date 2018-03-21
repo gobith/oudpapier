@@ -28,19 +28,11 @@ export default {
 
 <style>
 table {
-	margin-top:35px !important;
-	font-size: 14px;
 	border-collapse: collapse;
-
   width: 100%;
 	}
 
-
-td {
-	width: 22px;
-	height: 24px;
-	border: 1px solid #C1C3D1;
-  width:1px;
-  white-space:nowrap;
-}
+  td {
+  	border: 1px solid black;
+  }
 </style>

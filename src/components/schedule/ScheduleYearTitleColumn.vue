@@ -1,6 +1,6 @@
 <template>
   <td :colspan=column.colspan>
-    yr-t {{column.type}}
+    {{column.title}}
   </td>
 </template>
 

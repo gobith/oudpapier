@@ -1,6 +1,9 @@
 <template>
-  <td :colspan=column.colspan>
-    ss {{column.type}}
+  <td
+    :colspan=column.colspan
+    v-bind:style="{ backgroundColor: '#' + column.bgColor}"
+    align="center">
+    {{column.title}}
   </td>
 </template>
 

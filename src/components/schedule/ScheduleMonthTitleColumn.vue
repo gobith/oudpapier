@@ -1,6 +1,6 @@
 <template>
   <td :colspan=column.colspan>
-    mth-t {{column.type}}
+    {{column.title}}
   </td>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <td :colspan=column.colspan>
-    user {{column.type}}
+    {{column.title}}
   </td>
 </template>
 
