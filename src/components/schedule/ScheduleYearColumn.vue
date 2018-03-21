@@ -1,6 +1,8 @@
 <template>
-  <td :colspan=column.colspan>
-    {{column.type}}
+  <td
+    :colspan=column.colspan
+    align="center">
+    yr {{column.type}}
   </td>
 </template>
 

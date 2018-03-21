@@ -1,6 +1,6 @@
 <template>
   <td :colspan=column.colspan>
-    {{column.type}}
+    u-ss {{column.type}}
   </td>
 </template>
 

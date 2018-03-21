@@ -1,6 +1,6 @@
 <template>
   <td :colspan=column.colspan>
-    {{column.type}}
+    day-t {{column.type}}
   </td>
 </template>
 
