@@ -8,11 +8,14 @@ import { routes } from './routes'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { store } from './store/store';
+import {MediaQueries} from 'vue-media-queries';
+
+const mediaQueries = new MediaQueries();
 
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
-
+Vue.use(mediaQueries);
 
 
 export const router = new VueRouter({
@@ -24,5 +27,6 @@ new Vue({
   el: '#app',
   store: store,
   router: router,
+  mediaQueries: mediaQueries,
   render: h => h(App)
 })
