@@ -23,13 +23,17 @@
 <script>
 export default {
   data () {
-    return {name: '', date: null, statusString: null, nextStatuses: []}
+    return {name: '', date: null, statusString: null, nextStatuses: [], seconds: null, userId: null}
   },
 
   methods: {
     okPressed: (evt) => {},
     cancelPressed: (evt) => {},
-    statusPressed: function(status) {this.$store.commit("showRoosterModal", false)}
+    statusPressed: function(status) {
+
+        this.$store.dispatch('postUserPartTime' , { seconds: this.seconds , status: status.symbol, userId: this.userId});
+
+        this.$store.commit("showRoosterModal", false)}
   },
 
   computed: {
@@ -47,7 +51,10 @@ export default {
     this.name = upt.userName;
     this.date = upt.dateString;
     this.statusString = upt.status.string;
-    this.nextStatuses = upt.nextStatuses
+    this.nextStatuses = upt.nextStatuses;
+    this.seconds = upt.seconds;
+    this.userId = upt.userId;
+
   }
 }
 </script>

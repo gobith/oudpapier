@@ -61,6 +61,12 @@ export const store = new Vuex.Store({
       .catch(error => console.log('We got an error'))
 },
 
+  postUserPartTime ({commit} , userPartTime) {
+  axios
+    .post('userparttime?token=' + this.getters.token , userPartTime)
+    .then((response) => {console.log(response.data); commit('schedule' , response.data)})
+    .catch(error => console.log(error))
+},
   logout ({commit}) {
     commit('authUser' , {
       token: null,
