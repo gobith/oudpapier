@@ -12,16 +12,13 @@ import axios from 'axios';
 import ScheduleRow from './ScheduleRow.vue';
 import RoosterModal from './RoosterModal.vue';
 export default {
-  data () {
-  return {rows: []}
-  },
+
   components: {'schedule-row': ScheduleRow , 'rooster-modal': RoosterModal},
+  computed: {
+  rows: function () { return this.$store.getters.schedule}
+  },
   created: function () {
-    axios.get('schedule').then((response) => {
-      this.rows = response.data;
-      console.log(this.rows[0].columns[0].title);
-      console.log(this.rows)
-      })
+    this.$store.dispatch('getSchedule')
   }
 }
 </script>
