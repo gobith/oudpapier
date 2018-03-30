@@ -15,6 +15,7 @@ export const store = new Vuex.Store({
     showRoosterModal: false,
     userPartTime: null,
     schedule: [],
+    users: [],
   },
   mutations: {
     authUser (state , userData) {
@@ -37,6 +38,10 @@ export const store = new Vuex.Store({
       state.schedule = schedule
     },
 
+    users (state , users) {
+      state.users = users
+    },
+
   },
   actions: {
     login ({commit} , form) {
@@ -56,10 +61,17 @@ export const store = new Vuex.Store({
 
   getSchedule ({commit}) {
     axios
-      .get('schedule')
+      .get('schedule?token=' + this.getters.token)
       .then((response) => {commit('schedule' , response.data)})
       .catch(error => console.log('We got an error'))
 },
+
+  getUsers ({commit}) {
+    axios
+      .get('/users')
+      .then((response) => {console.log('we have users'); commit('users' , response.data)})
+      .catch(error => console.log(error))
+  },
 
   postUserPartTime ({commit} , userPartTime) {
   axios
@@ -112,6 +124,9 @@ export const store = new Vuex.Store({
     },
     schedule: (state) => {
       return state.schedule
+    },
+    users: (state) => {
+      return state.users
     },
 
   }
